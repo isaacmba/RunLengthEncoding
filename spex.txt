@@ -1,0 +1,98 @@
+Project 4: You are to implement one (Method -1) of the four Run Length Encoding methods taught in class:
+
+Method 1) Encode with zero and no wrap-around. //algorithm given below.
+Method 2) Encode without zero and wrap-around.
+Method 3) Encode without zero and no wrap-around.
+Method 4) Encode with zero and wrap-around.
+
+**************************************
+Language: Java
+**************************************
+Due date: Soft copies: 9/30/2018, Sunday before Midnight
+	   +1 pt for early submission, deadline: 
+9/27/2018, Thursday before midnight
+
+Due date:  Hard copies: 10/4/2018, Thursday in class
+
+**************************************
+I. Input(argv[0]): a txt file representing a grey-scale image with
+	Header information (four integers) 
+Note: there are spaces between each integer for easy programming!!
+
+For example: 
+
+5 8 0 9  // 5 rows, 8 columns, min value 0 and max value 9
+0 0 8 8 8 8 9 9
+9 0 7 7 8 8 9 0
+0 0 9 9 9 9 9 9
+9 9 1 1 8 8 2 2
+3 3 1 1 5 5 5 0
+	
+**************************************
+II. Outputs (argv[1]): the result of the encoded image, 
+in the given format below. 
+	
+	*** Format of the encoded run-length:
+ 
+The first text line is the input image header; 
+	follows by one run-length per text line.
+
+For the example input in the above, the output will be:
+	
+	20 15 0 9 // header information
+    	0 0 0 2 // startRow is 0, startCol is 0, color is 0, 2 pixels long
+    	0 2 8 5  // startRow is 0, startCol is 2, color is 8, 4 pixels long
+   	 :
+     	 :
+     	 :
+
+*******************************
+III. Data structure: 
+*******************************
+- RunLength class
+   
+	- numRows (int)
+	- numCols (int)
+	- minVal (int)
+	- maxVal (int)
+*******************************
+IV. main (…) 
+*******************************
+
+step 0: inFile, outFile  open input and output files
+numRows, numCols, minVal, maxVal  read for inFile
+ 
+r <-- 0
+
+Step 1: 
+	c <-- 0
+	count <-- 0
+	currVal <-- read the next pixel (integer) from inFile 
+*one integer at a time*
+
+Step 2: output r and c and currVal to outFile
+	
+  count ++
+
+Step 3: c++
+
+Step 4: nextVal <-- read the next pixel (integer) from inFile
+
+Step 5: if nextVal == currVal
+	   	count++
+	  else
+	   	output count to outFile
+	  	currVal <-- nextVal
+	  	count <-- 1
+	   	output r and c and currVal
+		 
+Step 6: repeat step 3 to step 5 until end of text line
+
+Step 7: r++ 
+		
+Step 8: repeat Step 1 to Step 7 until end of file
+
+			
+step 9: closed all files
+
+			
