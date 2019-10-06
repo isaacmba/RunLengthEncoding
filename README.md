@@ -1,5 +1,5 @@
 ## <h2><b>CS 323: Design and Analysis of Algorithms</b></h2>
-# <h3>Project 4: You are to implement Run Length Encoding Algorithm/h3> (see <a href="https://github.com/isaacmba/RunLengthEncoding/blob/master/spex.txt">spex.txt</a>)
+# <h3>Project 4: You are to implement Run Length Encoding Algorithm</h3> (see <a href="https://github.com/isaacmba/RunLengthEncoding/blob/master/spex.txt">spex.txt</a>)
 
 # <h4>Compilation</h4>	
 
